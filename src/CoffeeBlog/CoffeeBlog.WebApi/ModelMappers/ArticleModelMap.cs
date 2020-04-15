@@ -1,5 +1,5 @@
-﻿using CoffeeBlog.WebApi.Models;
-using CoffeeBlog.WebApi.Services;
+﻿using CoffeeBlog.WebApi.Interfaces;
+using CoffeeBlog.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoffeeBlog.WebApi.ModelMappers

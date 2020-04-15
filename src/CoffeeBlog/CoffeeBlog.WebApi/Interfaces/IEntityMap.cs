@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CoffeeBlog.WebApi.Services
+namespace CoffeeBlog.WebApi.Interfaces
 {
     public interface IEntityMap
     {

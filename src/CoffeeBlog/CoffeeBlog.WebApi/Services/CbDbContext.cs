@@ -1,4 +1,5 @@
 ﻿using CoffeeBlog.WebApi.Common;
+using CoffeeBlog.WebApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;

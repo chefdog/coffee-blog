@@ -1,4 +1,4 @@
-﻿using CoffeeBlog.WebApi.Services;
+﻿using CoffeeBlog.WebApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 

@@ -1,10 +1,9 @@
-﻿using CoffeeBlog.WebApi.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoffeeBlog.WebApi.Services
+namespace CoffeeBlog.WebApi.Interfaces
 {
     public interface IRepository : IDisposable
     {

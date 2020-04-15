@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace CoffeeBlog.WebApi.DataTransferModels
 {
-    public class ArticleDataTransferModel : BaseDto
+    public class BlogDataTransferModel : BaseDto
     {
-        
-        public List<ParagraphDataTransferModel> Paragraphs { get; set; }
+        public List<ArticleDataTransferModel> Articles { get; set; }
     }
 }

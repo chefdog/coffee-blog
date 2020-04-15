@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CoffeeBlog.WebApi.Interfaces;
+using System;
 
 namespace CoffeeBlog.WebApi.DataTransferModels
 {
-    public abstract class BaseDto
+    public abstract class BaseDto : IModel
     {
         public Int64 Id { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastModified { get; set; }
         public string LastModifiedBy { get; set; }
-        public string Title { get; set; }
-        public int Rating { get; set; }
+       
     }
 }

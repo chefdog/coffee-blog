@@ -1,4 +1,4 @@
-﻿using CoffeeBlog.WebApi.Models;
+﻿using CoffeeBlog.WebApi.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

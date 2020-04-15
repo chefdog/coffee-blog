@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoffeeBlog.WebApi.Services.BlogService
+namespace CoffeeBlog.WebApi.DataTransferModels
 {
-    public interface IBlogService
+    public class MetaDataTransferModel
     {
-
     }
 }

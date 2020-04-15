@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoffeeBlog.WebApi.DataTransferModels;
+using CoffeeBlog.WebApi.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CoffeeBlog.WebApi.Controllers
 {
@@ -11,5 +14,19 @@ namespace CoffeeBlog.WebApi.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
+        private IBusinessService<ArticleDataTransferModel> blogService;
+        private readonly ILogger<BlogController> logger;
+        public BlogController(IBusinessService<ArticleDataTransferModel> blogService, ILogger<BlogController> logger)
+        {
+            this.blogService = blogService;
+            this.logger = logger;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<ArticleDataTransferModel>> GetAsync()
+        {
+            var articles = await blogService.GetMany(0, 0, 100);
+            return articles;
+        }
     }
 }

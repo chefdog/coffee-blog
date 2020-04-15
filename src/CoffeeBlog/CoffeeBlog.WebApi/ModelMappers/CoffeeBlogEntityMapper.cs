@@ -1,4 +1,4 @@
-﻿using CoffeeBlog.WebApi.Services;
+﻿using CoffeeBlog.WebApi.Interfaces;
 using System.Collections.Generic;
 
 namespace CoffeeBlog.WebApi.ModelMappers
@@ -9,8 +9,7 @@ namespace CoffeeBlog.WebApi.ModelMappers
         {
             Mappings = new List<IEntityMap>()
             {
-                new ArticleModelMap() as IEntityMap,
-                
+                new ArticleModelMap() as IEntityMap
             };
         }
     }
