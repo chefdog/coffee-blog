@@ -9,5 +9,6 @@ namespace CoffeeBlog.WebApi.Models
     {
         public string Title { get; set; }
         public string Content { get; set; }
+        public long ArticleId { get; set; }
     }
 }

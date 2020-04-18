@@ -16,7 +16,7 @@ namespace CoffeeBlog.WebApi.Controllers
     {
         private IBusinessService<ArticleDataTransferModel> blogService;
         private readonly ILogger<BlogController> logger;
-        public BlogController(IBusinessService<ArticleDataTransferModel> blogService, ILogger<BlogController> logger)
+        public BlogController(ILogger<BlogController> logger, IBusinessService<ArticleDataTransferModel> blogService)
         {
             this.blogService = blogService;
             this.logger = logger;
@@ -26,7 +26,8 @@ namespace CoffeeBlog.WebApi.Controllers
         public async Task<IEnumerable<ArticleDataTransferModel>> GetAsync()
         {
             var articles = await blogService.GetMany(0, 0, 100);
-            return articles;
+            var result = articles.AsEnumerable();
+            return result;
         }
     }
 }

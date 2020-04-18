@@ -6,6 +6,7 @@ using CoffeeBlog.WebApi.Common;
 using CoffeeBlog.WebApi.DataTransferModels;
 using CoffeeBlog.WebApi.Interfaces;
 using CoffeeBlog.WebApi.ModelMappers;
+using CoffeeBlog.WebApi.Models;
 using CoffeeBlog.WebApi.Services;
 using CoffeeBlog.WebApi.Services.BlogService;
 using Microsoft.AspNetCore.Builder;
@@ -38,10 +39,10 @@ namespace CoffeeBlog.WebApi
             //MS SQL
             services.AddEntityFrameworkSqlServer().AddDbContext<CbDbContext>();
 
-            //SQLite
             services.AddScoped<IEntityMapper, CoffeeBlogEntityMapper>();
-            services.AddScoped<IRepository, ArticleJsonRepository>();
-            services.AddScoped<IBusinessService<BlogDataTransferModel>, BlogBusinessService>();
+
+            services.AddScoped<IRepository<Article>, ArticleJsonRepository>();
+            services.AddScoped<IBusinessService<ArticleDataTransferModel>, BlogBusinessService>();
 
             services.AddControllers();
         }

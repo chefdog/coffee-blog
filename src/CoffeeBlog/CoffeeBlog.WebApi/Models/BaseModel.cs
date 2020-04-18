@@ -1,13 +1,11 @@
-﻿using System;
+﻿using CoffeeBlog.WebApi.Interfaces;
+using System;
 
 namespace CoffeeBlog.WebApi.Models
 {
-    public abstract class BaseModel
+    public abstract class BaseModel : IModel
     {
         public long Id { get; set; }
-
-        public DateTime PublisDate { get; set; }
-
         public long UserId { get; set; }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using CoffeeBlog.WebApi.Common;
 using CoffeeBlog.WebApi.DataTransferModels;
 using CoffeeBlog.WebApi.Interfaces;
+using CoffeeBlog.WebApi.ModelMappers;
+using CoffeeBlog.WebApi.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -9,14 +12,17 @@ using System.Threading.Tasks;
 
 namespace CoffeeBlog.WebApi.Services.BlogService
 {
-    public class BlogBusinessService : IBusinessService<BlogDataTransferModel>
+    public class BlogBusinessService : IBusinessService<ArticleDataTransferModel>
     {
         private AppSettings appSettings;
-        public BlogBusinessService(IOptions<AppSettings> options, IRepository articleJsonRepos) {
+        private ArticleJsonRepository articleRepository;
+        public BlogBusinessService(IOptions<AppSettings> options, IRepository<Article> articleRepository)
+        {
             appSettings = options.Value;
+            this.articleRepository = articleRepository as ArticleJsonRepository;
         }
 
-        public Task<BlogDataTransferModel> Create(BlogDataTransferModel dto)
+        public Task<ArticleDataTransferModel> Create(ArticleDataTransferModel dto)
         {
             throw new NotImplementedException();
         }
@@ -26,22 +32,30 @@ namespace CoffeeBlog.WebApi.Services.BlogService
             throw new NotImplementedException();
         }
 
-        public Task<BlogDataTransferModel> Find(BlogDataTransferModel dto)
+        public Task<ArticleDataTransferModel> Find(ArticleDataTransferModel dto)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<BlogDataTransferModel>> GetMany(int start, int skip, int max)
+        public Task<ArticleDataTransferModel> GetById(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<BlogDataTransferModel> Remove(BlogDataTransferModel dto)
+        public async Task<List<ArticleDataTransferModel>> GetMany(int start, int skip, int max)
+        {
+            await articleRepository.AddAsync(new Article());
+            var articles = articleRepository.GetMany(max, start);
+            var result = articles.Cast<Article>().Select(a => a.ToDto());
+            return result.ToList();
+        }
+
+        public Task<ArticleDataTransferModel> Remove(ArticleDataTransferModel dto)
         {
             throw new NotImplementedException();
         }
 
-        public Task<BlogDataTransferModel> Update(BlogDataTransferModel dto)
+        public Task<ArticleDataTransferModel> Update(ArticleDataTransferModel dto)
         {
             throw new NotImplementedException();
         }

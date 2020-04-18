@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeBlog.WebApi.Interfaces
 {
-    public interface IRepository : IDisposable
+    public interface IRepository<T> where T:IModel
     {
         IQueryable<IModel> GetMany(Int32 pageSize, Int32 pageNumber);
 

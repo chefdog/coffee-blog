@@ -1,4 +1,5 @@
 ﻿using CoffeeBlog.WebApi.Interfaces;
+using CoffeeBlog.WebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,42 +7,14 @@ using System.Threading.Tasks;
 
 namespace CoffeeBlog.WebApi.Services.BlogService
 {
-    public class ArticleRepository : IRepository
+    public class ArticleRepository : IRepository<Article>, IDisposable
     {
         private CbDbContext dbContext;
         public ArticleRepository(CbDbContext cbDbContext) {
             dbContext = cbDbContext;
         }
 
-        public async Task<IModel> AddAsync(IModel entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<List<IModel>> IRepository.AddRangeAsync(List<IModel> data)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IModel> IRepository.DeleteAsync(IModel changes)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IModel> IRepository.GetAsync(IModel entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        IQueryable<IModel> IRepository.GetMany(int pageSize, int pageNumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IModel> IRepository.UpdateAsync(IModel changes)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
@@ -76,6 +49,36 @@ namespace CoffeeBlog.WebApi.Services.BlogService
             Dispose(true);
             // TODO: uncomment the following line if the finalizer is overridden above.
             // GC.SuppressFinalize(this);
+        }
+
+        public IQueryable<IModel> GetMany(int pageSize, int pageNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IModel> GetAsync(IModel entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IModel> AddAsync(IModel entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<IModel>> AddRangeAsync(List<IModel> data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IModel> UpdateAsync(IModel changes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IModel> DeleteAsync(IModel changes)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
