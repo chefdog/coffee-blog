@@ -1,13 +1,12 @@
 <div id="banner">
     <div class="slider-wrapper">
-        <ngb-carousel *ngIf="images">
-            <ng-template ngbSlide *ngFor="let image of images">
-              <div class="carousel-img-wrapper" [style.background-image]="'url('+image+')'">
-                
+        <ngb-carousel *ngIf="slides">
+            <ng-template ngbSlide *ngFor="let slide of slides">
+              <div class="carousel-img-wrapper" [style.background-image]="'url('+slide.image+')'">                
               </div>
-              <div class="carousel-caption-content">
-                <h1>First slide label</h1>
-                <p class="desc">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <div class="carousel-caption">
+                <h1 class="line-title title">{{slide.title}}hallo</h1>
+                <p class="desc">{{slide.description}}</p>
               </div>
             </ng-template>            
           </ngb-carousel>
