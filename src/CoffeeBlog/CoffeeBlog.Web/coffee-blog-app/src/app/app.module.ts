@@ -9,6 +9,9 @@ import { BannerComponent } from './components/banner/banner.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { NewsComponent } from './components/news/news.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { SplashComponent } from './components/splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { FooterComponent } from './components/footer/footer.component';
     BannerComponent,
     IntroComponent,
     NewsComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    WelcomeComponent,
+    SplashComponent
   ],
   imports: [
     NgbModule,
