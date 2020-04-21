@@ -1,1 +1,31 @@
-<p>news works!</p>
+<section id="latest" class="section latest" style="background-image: url(../images/home/latest/bg.png); background-position: right top; background-repeat: no-repeat;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <h1 class="title line-title">
+                    Latest Update<i class="fa"></i>
+                </h1>
+                <ul class="posts_list" *ngIf="news">
+                    <li *ngFor="let article of news">
+                        <figure>
+                            <a href="#"> <img alt="" [src]="article.image">
+                            </a>
+                        </figure>
+                        <aside>
+                            <h4 class="title">
+                                <a href="#">{{article.title}}</a>
+                            </h4>
+                            <p>{{article.description}}</p>
+                        </aside>
+                    </li>                    
+                </ul>
+            </div>
+            <div class="col-sm-5">
+                <div class="widget-gallery">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
