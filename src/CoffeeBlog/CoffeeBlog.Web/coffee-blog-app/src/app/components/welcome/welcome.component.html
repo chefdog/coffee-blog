@@ -8,9 +8,9 @@
                 </figure>
             </div>
             
-            <div class="col-sm-6 col-sm-pull-6">
+            <div class="col-sm-6 col-sm-pull-6" *ngIf="article">
                 <h1 class="title line-title">
-                    Welcome to our Retation<i class="fa"></i>
+                    {{article.title}}<i class="fa"></i>
                 </h1>
                 <aside>
                     <p>Cmspresso is the process that slowly and gradually

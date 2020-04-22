@@ -1,7 +1,7 @@
 import { Article } from 'src/app/models/article.model';
 import { ArticleType } from 'src/app/models/article-type.enum';
 
-export const ARTICLES: Array<Article> = [
+export const REVIEWS: Array<Article> = [
    {
         id: 11,
         lastModified: '21-01-04-2020',
