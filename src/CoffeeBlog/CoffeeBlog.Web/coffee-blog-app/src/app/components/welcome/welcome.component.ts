@@ -11,7 +11,15 @@ export class WelcomeComponent implements OnInit {
   constructor(private readonly articleService: ArticleService) { }
 
   ngOnInit(): void {
-    this.articleService.getArticle(1).subscribe(a => this.article = a);
+    this.articleService.getArticle(1).subscribe(a => {
+      if (a.errors.length > 0) {
+        return;
+      }
+
+      if (a.data.length > 0) {
+        this.article = a.data;
+      }
+    });
   }
 
 }

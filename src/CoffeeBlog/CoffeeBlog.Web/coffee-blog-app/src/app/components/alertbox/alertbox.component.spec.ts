@@ -1,25 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewsComponent } from './news.component';
+import { AlertboxComponent } from './alertbox.component';
 
-describe('NewsComponent', () => {
-  let component: NewsComponent;
-  let fixture: ComponentFixture<NewsComponent>;
+describe('AlertboxComponent', () => {
+  let component: AlertboxComponent;
+  let fixture: ComponentFixture<AlertboxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsComponent ]
+      declarations: [ AlertboxComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewsComponent);
+    fixture = TestBed.createComponent(AlertboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  /* it('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
-  }); */
+  });
 });
