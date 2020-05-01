@@ -1,5 +1,6 @@
-<section id="latest" class="section latest" style="background-image: url(../images/home/latest/bg.png); background-position: right top; background-repeat: no-repeat;">
+<section id="latest" class="section latest" style="background-image: url(../assets/images/home/latest/bg.png); background-position: right top; background-repeat: no-repeat;">
     <div class="container">
+        <app-alertbox [messages]="errors"></app-alertbox>
         <div class="row">
             <div class="col-sm-7">
                 <h1 class="title line-title">
@@ -8,12 +9,13 @@
                 <ul class="posts_list" *ngIf="news">
                     <li *ngFor="let article of news">
                         <figure>
-                            <a href="#"> <img alt="" [src]="article.image">
+                            <a [routerLink]="['/news', article.id]">
+                                <img alt="{{article.title}}" [src]="article.image">
                             </a>
                         </figure>
                         <aside>
                             <h4 class="title">
-                                <a href="#">{{article.title}}</a>
+                                <a [routerLink]="['/news', article.id]">{{article.title}}</a>
                             </h4>
                             <p>{{article.description}}</p>
                         </aside>

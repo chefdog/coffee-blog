@@ -1,0 +1,5 @@
+<div *ngIf="messages">
+    <div class="alertClass" role="alert" *ngFor="let message for messages">
+        <h4 class="alert-heading">{{message.title}}</h4>
+    </div>
+</div>

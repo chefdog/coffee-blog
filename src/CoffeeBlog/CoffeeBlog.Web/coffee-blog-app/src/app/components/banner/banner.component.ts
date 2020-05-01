@@ -21,20 +21,20 @@ export class BannerComponent implements OnInit {
     const slide = new Slide();
     slide.id = 1;
     slide.title = 'Koffie lekkerr';
-    slide.image = '../../assets/imgs/slider/slider-1.jpg';
+    slide.image = '../../assets/images/slider/slider-1.jpg';
     slide.description = 'mijn fantastische omschrijving';
     this.slides.push(slide);
 
     slide.id = 2;
     slide.title = 'Koffie lekkerr 2';
     slide.description = 'mijn fantastische omschrijving 2';
-    slide.image = '../../assets/imgs/slider/slider-2.jpg';
+    slide.image = '../../assets/images/slider/slider-2.jpg';
     this.slides.push(slide);
 
     slide.id = 3;
     slide.title = 'Koffie lekkerr 3';
     slide.description = 'mijn fantastische omschrijving 3';
-    slide.image = '../../assets/imgs/slider/slider-3.jpg';
+    slide.image = '../../assets/images/slider/slider-3.jpg';
     this.slides.push(slide);
   }
 }

@@ -586,7 +586,7 @@ h1.title{
 .bulletproof ul{
 	padding: 0 0 0 20px;
 	margin: 0;
-	list-style-image: url("../imgs/list-style-1.png");
+	list-style-image: url("../images/list-style-1.png");
 }
 .bulletproof h4.title{
 	text-align: center;
@@ -1237,12 +1237,12 @@ h3.widgettitle{
 }
 .sidebar .widget ul{
 	line-height: 28px;
-	list-style-image: url("../imgs/list-style-1.png");
+	list-style-image: url("../images/list-style-1.png");
 	padding-left: 20px;
 }
 .sidebar .categories ul li:hover,
 .sidebar .achives ul li:hover{
-	list-style-image: url("../imgs/list-style-2.png");
+	list-style-image: url("../images/list-style-2.png");
 
 }
 .sidebar .categories ul li a,
