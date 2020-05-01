@@ -32,7 +32,14 @@ namespace CoffeeBlog.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(m => {
+                m.EnableEndpointRouting = false; 
+            });
             services.AddOptions();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddSingleton(Configuration);
 
@@ -55,16 +62,20 @@ namespace CoffeeBlog.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMvc();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors(options => options.AllowAnyOrigin());
         }
     }
 }
