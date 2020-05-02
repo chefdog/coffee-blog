@@ -4,6 +4,7 @@
     {
         review,
         article,
-        coffee
+        coffee,
+        other
     }
 }

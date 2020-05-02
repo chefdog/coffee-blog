@@ -32,9 +32,13 @@ namespace CoffeeBlog.WebApi.Services.BlogService
             throw new NotImplementedException();
         }
 
-        public Task<ArticleDataTransferModel> Find(ArticleDataTransferModel dto)
+        public async Task<List<ArticleDataTransferModel>> Search(ArticleDataTransferModel dto, int start, int skip, int max)
         {
-            throw new NotImplementedException();
+            List<ArticleDataTransferModel> result = new List<ArticleDataTransferModel>();
+            var data = articleRepository.GetMany(max, start);
+            var articles = data.Cast<Article>().Select(a => a.ToDto());
+            result = articles.Where(a => a.ArticleType.Equals(dto.ArticleType)).ToList();
+            return result;
         }
 
         public Task<ArticleDataTransferModel> GetById(long id)
@@ -44,10 +48,9 @@ namespace CoffeeBlog.WebApi.Services.BlogService
 
         public async Task<List<ArticleDataTransferModel>> GetMany(int start, int skip, int max)
         {
-            await articleRepository.AddAsync(new Article());
             var articles = articleRepository.GetMany(max, start);
             var result = articles.Cast<Article>().Select(a => a.ToDto());
-            return result.ToList();
+            return await result.ToListAsync();
         }
 
         public Task<ArticleDataTransferModel> Remove(ArticleDataTransferModel dto)
