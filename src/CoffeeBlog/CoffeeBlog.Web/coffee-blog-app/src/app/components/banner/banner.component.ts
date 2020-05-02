@@ -4,13 +4,12 @@ import { Slide } from 'src/app/models/slide.model';
 
 @Component({
   selector: 'app-banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css']
+  templateUrl: './banner.component.html'
 })
 export class BannerComponent implements OnInit {
   slides: Array<Slide>;
   constructor(config: NgbCarouselConfig) {
-    // customize default values of carousels used by this component tree
+    config.interval = 10000;
     config.wrap = true;
     config.keyboard = false;
     config.pauseOnHover = false;
