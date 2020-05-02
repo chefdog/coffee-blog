@@ -81,6 +81,7 @@ namespace CoffeeBlog.WebApi.Services.BlogService
             var files = di.GetFiles();
             List<Article> result = new List<Article>();
             Article article = null;
+
             foreach (var f in files)
             {
                 using (StreamReader file = File.OpenText(f.FullName))

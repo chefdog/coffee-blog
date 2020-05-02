@@ -12,12 +12,8 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.articleService.getArticle(1).subscribe(a => {
-      if (a.errors.length > 0) {
-        return;
-      }
-
-      if (a.data.length > 0) {
-        this.article = a.data;
+      if (a.model.length > 0) {
+        this.article = a.model;
       }
     });
   }
