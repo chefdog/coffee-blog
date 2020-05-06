@@ -23,3 +23,10 @@ Documentation References:
 - Blob Service C# API - http://go.microsoft.com/fwlink/?LinkID=398944 
 - Delegating Access with Shared Access Signatures - http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/ 
 
+## Database
+Running migrations After you've defined your initial model, it's time to create the database. To do this, add an initial migration.
+
+3.1. SQL Server (Azure) run the command : "Add-Migration InitialCreate -project CryptoTracker.Common -Context CTDbContext -OutputDir Migrations\SqlServerMigrations" and next: "Update-Database InitialCreate"
+
+3.2. SQLite (filebased, runs under linux, windows) run the command : "Add-Migration InitialCreate -project CryptoTracker.Common -Context CTDbsqliteContext -OutputDir Migrations\SqliteMigrations" and next: "Update-Database InitialCreate"
+

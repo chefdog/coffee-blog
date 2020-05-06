@@ -2,7 +2,7 @@
     <div class="slider-wrapper">
         <ngb-carousel *ngIf="slides">
             <ng-template ngbSlide *ngFor="let slide of slides">
-              <div class="carousel-img-wrapper" [style.background-image]="'url('+slide.image+')'">                
+              <div class="carousel-img-wrapper" [style.background-image]="'url('+slide.fileName+')'">                
               </div>
               <div class="carousel-caption">
                 <h1 class="line-title title">{{slide.title}}hallo</h1>

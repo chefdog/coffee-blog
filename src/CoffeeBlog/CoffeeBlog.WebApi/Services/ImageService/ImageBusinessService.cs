@@ -37,9 +37,10 @@ namespace CoffeeBlog.WebApi.Services.ImageService
             throw new NotImplementedException();
         }
 
-        public Task<List<ImageDataTransferModel>> GetMany(int start, int skip, int max)
+        public async Task<List<ImageDataTransferModel>> GetMany(int start, int skip, int max)
         {
-            throw new NotImplementedException();
+            var result = await loadTempData();
+            return result;
         }
 
         public Task<ImageDataTransferModel> Remove(ImageDataTransferModel dto)
@@ -47,9 +48,10 @@ namespace CoffeeBlog.WebApi.Services.ImageService
             throw new NotImplementedException();
         }
 
-        public Task<List<ImageDataTransferModel>> Search(ImageDataTransferModel dto, int start, int skip, int max)
+        public async Task<List<ImageDataTransferModel>> Search(ImageDataTransferModel dto, int start, int skip, int max)
         {
-            throw new NotImplementedException();
+            var result = await loadTempData();
+            return result;
         }
 
         public Task<ImageDataTransferModel> Update(ImageDataTransferModel dto)
@@ -61,6 +63,37 @@ namespace CoffeeBlog.WebApi.Services.ImageService
         {
             string ext = Path.GetExtension(filename);
             return string.Format("{0:10}_{1}{2}", DateTime.Now.Ticks, Guid.NewGuid(), ext);
+        }
+
+        private async Task<List<ImageDataTransferModel>> loadTempData() {
+            List<ImageDataTransferModel> result = new List<ImageDataTransferModel>() {
+                new ImageDataTransferModel {
+                    Id = 1,
+                    Created = DateTime.Now,
+                    FileName = "../../assets/images/slider/20160409_131415000_iOS.jpg",
+                    LastModified = DateTime.Now,
+                    Title = "SCEA Training",
+                    Description = "mijn fantastische omschrijving"
+                },
+                new ImageDataTransferModel {
+                    Id = 2,
+                    Created = DateTime.Now,
+                    FileName = "../../assets/images/slider/20160409_131734000_iOS.jpg",
+                    LastModified = DateTime.Now,
+                    Title = "SCEA Training 02",
+                    Description = "mijn fantastische omschrijving 2"
+                },
+                new ImageDataTransferModel {
+                    Id = 3,
+                    Created = DateTime.Now,
+                    FileName = "../../assets/images/slider/20160409_132142000_iOS.jpg",
+                    LastModified = DateTime.Now,
+                    Title = "SCEA Training 03",
+                    Description = "mijn fantastische omschrijving 3"
+                }
+            };
+            await Task.Delay(500);
+            return result;
         }
     }
 }
