@@ -1,7 +1,7 @@
 
 export class Slide {
     id: number;
-    image: string;
+    fileName: string;
     title: string;
     description: string;
 }

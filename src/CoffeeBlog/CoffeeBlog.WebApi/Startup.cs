@@ -9,6 +9,7 @@ using CoffeeBlog.WebApi.ModelMappers;
 using CoffeeBlog.WebApi.Models;
 using CoffeeBlog.WebApi.Services;
 using CoffeeBlog.WebApi.Services.BlogService;
+using CoffeeBlog.WebApi.Services.ImageService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -50,6 +51,7 @@ namespace CoffeeBlog.WebApi
 
             services.AddScoped<IRepository<Article>, ArticleJsonRepository>();
             services.AddScoped<IBusinessService<ArticleDataTransferModel>, BlogBusinessService>();
+            services.AddScoped<IBusinessService<ImageDataTransferModel>, ImageBusinessService>();
 
             services.AddControllers();
         }

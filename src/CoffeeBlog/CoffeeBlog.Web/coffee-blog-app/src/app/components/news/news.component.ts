@@ -15,7 +15,6 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
     this.articleService.getArticlesByType(ArticleType.review).subscribe(result => {
-      console.log(result);
       if (result.errorMessage) {
         this.errors = new Array<string>();
         this.errors.push(result.errorMessage);
