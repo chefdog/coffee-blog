@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using CoffeeBlog.WebApi.Common;
+using CoffeeBlog.Common.Enums;
+using CoffeeBlog.Common.Interfaces;
 using CoffeeBlog.WebApi.DataTransferModels;
-using CoffeeBlog.WebApi.Interfaces;
 using CoffeeBlog.WebApi.Responses;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +14,7 @@ namespace CoffeeBlog.WebApi.Controllers
     [Route("api/[controller]")]
     [EnableCors("AllowOrigin")]
     [ApiController]
-    public class BlogController : ControllerBase
+    public class BlogController : BaseController
     {
         private IBusinessService<ArticleDataTransferModel> blogService;
         private readonly ILogger<BlogController> logger;
@@ -25,22 +25,9 @@ namespace CoffeeBlog.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAsync(int? max = 10, int? pageNumber = 1)
+        public async Task<IActionResult> GetAsync(int max = 10, int pageNumber = 1)
         {
-            var response = new ListResultResponse<ArticleDataTransferModel>();
-            try
-            {
-                response.PageSize = (int)max;
-                response.PageNumber = (int)pageNumber;
-                response.Model = await blogService.GetMany(0, 0, 100);
-                response.Message = $"Total of records: {response.Model.Count()}";
-            }
-            catch (Exception ex)
-            {
-                response.DidError = true;
-                response.ErrorMessage = ex.Message;
-            }
-            return response.ToHttpResponse();
+            return ToApiListResponse<ArticleDataTransferModel>(data: await blogService.GetMany(pageNumber, 0, max));
         }
 
         [HttpGet("{articleType}")]

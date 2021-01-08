@@ -7,7 +7,6 @@ using CoffeeBlog.WebApi.DataTransferModels;
 using CoffeeBlog.WebApi.Interfaces;
 using CoffeeBlog.WebApi.ModelMappers;
 using CoffeeBlog.WebApi.Models;
-using CoffeeBlog.WebApi.Services;
 using CoffeeBlog.WebApi.Services.BlogService;
 using CoffeeBlog.WebApi.Services.ImageService;
 using Microsoft.AspNetCore.Builder;
