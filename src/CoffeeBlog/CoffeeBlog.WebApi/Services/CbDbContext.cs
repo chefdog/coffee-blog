@@ -2,7 +2,6 @@
 using CoffeeBlog.WebApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using System;
 
 namespace CoffeeBlog.WebApi.Services
 {
@@ -15,7 +14,7 @@ namespace CoffeeBlog.WebApi.Services
             EntityMapper = entityMapper;
         }
 
-        public String ConnectionString { get; }
+        public string ConnectionString { get; }
 
         public IEntityMapper EntityMapper { get; }
 

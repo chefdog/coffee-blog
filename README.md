@@ -24,9 +24,14 @@ Documentation References:
 - Delegating Access with Shared Access Signatures - http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/ 
 
 ## Database
-Running migrations After you've defined your initial model, it's time to create the database. To do this, add an initial migration.
 
-3.1. SQL Server (Azure) run the command : "Add-Migration InitialCreate -project CryptoTracker.Common -Context CTDbContext -OutputDir Migrations\SqlServerMigrations" and next: "Update-Database InitialCreate"
+### Install migration tools
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Update-Package Microsoft.EntityFrameworkCore.Tools
 
-3.2. SQLite (filebased, runs under linux, windows) run the command : "Add-Migration InitialCreate -project CryptoTracker.Common -Context CTDbsqliteContext -OutputDir Migrations\SqliteMigrations" and next: "Update-Database InitialCreate"
+### SQL Server (Azure) 
+run the command : "Add-Migration InitialCreate -project CryptoTracker.Common -Context CTDbContext -OutputDir Migrations\SqlServerMigrations" and next: "Update-Database InitialCreate"
+
+### SQLite (filebased, runs under linux, windows) 
+run the command : "Add-Migration InitialCreate -project CryptoTracker.Common -Context CTDbsqliteContext -OutputDir Migrations\SqliteMigrations" and next: "Update-Database InitialCreate"
 

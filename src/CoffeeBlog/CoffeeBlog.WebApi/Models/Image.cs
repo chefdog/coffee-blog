@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace CoffeeBlog.WebApi.Models
 {
-    public class Image
+    public class Image : BaseModel
     {
+        public long ReferenceId { get; set; }
+
+        public string fileName { get; set; }
     }
 }

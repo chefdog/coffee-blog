@@ -9,7 +9,9 @@ namespace CoffeeBlog.WebApi.ModelMappers
         {
             Mappings = new List<IEntityMap>()
             {
-                new ArticleModelMap() as IEntityMap
+                new ArticleModelMap() as IEntityMap,
+                new TagModelMap() as IEntityMap,
+                new ImageModelMap() as IEntityMap
             };
         }
     }
