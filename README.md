@@ -6,12 +6,15 @@ The architecture and solutions have been build based on concepts from books and 
 in several projects over the years.
 
 Books I have read:
-Modern API Design with ASP.NET core 2
-Building Microservices with .NET Core 2.0
-ASP.NET Core 3 and angular 9
+Modern API Design with ASP.NET core 2 : https://www.amazon.nl/dp/B07B9S3YHL/ref=dp_kinw_strp_1
+Building Microservices with .NET Core 2.0 : https://www.amazon.nl/dp/B075VB9YL7/ref=dp_kinw_strp_1
+ASP.NET Core 3 and angular 9 : https://www.amazon.nl/dp/B083TTLXCB/ref=cm_sw_r_tw_dp_P-k.FbVA7HXRR
 
 Training courses:
-Angular - The complete guide, by Maximilian Schwarzmuller (Udemy)
+Angular - The complete guide, by Maximilian Schwarzmuller (Udemy) : https://www.udemy.com/share/101WgAA0AZcFlSTHo=/
+
+Coworkers 
+E.Peschier & P.Oerlemans
 
 # .NET Core WebApi
 
