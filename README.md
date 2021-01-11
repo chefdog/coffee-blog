@@ -1,5 +1,7 @@
 # coffee-blog
-.net core angular 9 blog engine
+.net core angular 9 blog engine Sample project
+
+This project is not and actual working solution. It is a sample.
 
 # Credits
 The architecture and solutions have been build based on concepts from books and best practices discovered working 

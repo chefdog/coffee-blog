@@ -6,6 +6,6 @@ namespace CoffeeBlog.Common.Interfaces
     {
         int PageSize { get; set; }
         int PageNumber { get; set; }
-        IEnumerable<TModel> Model { get; set; }
+        IList<TModel> Model { get; set; }
     }
 }

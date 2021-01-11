@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CoffeeBlog.Common.Interfaces;
 using CoffeeBlog.WebApi.DataTransferModels;
-using CoffeeBlog.WebApi.Interfaces;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 

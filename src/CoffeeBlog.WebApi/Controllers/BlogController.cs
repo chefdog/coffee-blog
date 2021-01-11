@@ -1,10 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CoffeeBlog.Common.Enums;
 using CoffeeBlog.Common.Interfaces;
 using CoffeeBlog.WebApi.DataTransferModels;
-using CoffeeBlog.WebApi.Responses;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -17,7 +14,7 @@ namespace CoffeeBlog.WebApi.Controllers
     public class BlogController : BaseController
     {
         private IBusinessService<ArticleDataTransferModel> blogService;
-        private readonly ILogger<BlogController> logger;
+
         public BlogController(ILogger<BlogController> logger, IBusinessService<ArticleDataTransferModel> blogService)
         {
             this.blogService = blogService;
@@ -33,40 +30,18 @@ namespace CoffeeBlog.WebApi.Controllers
         [HttpGet("{articleType}")]
         public async Task<IActionResult> GetByArticleTypeAsync(string articleType)
         {
-            var response = new ListResultResponse<ArticleDataTransferModel>();
-            try
-            {
-                response.Model = await blogService.Search(
+            return ToApiListResponse<ArticleDataTransferModel>(data: await blogService.Search(
                     new ArticleDataTransferModel { ArticleType = (ArticleType)System.Enum.Parse(typeof(ArticleType), articleType) },
                     1,
                     0,
                     100
-                );
-                response.Message = $"Total of records: {response.Model.Count()}";
-            }
-            catch (Exception ex)
-            {
-                response.DidError = true;
-                response.ErrorMessage = ex.Message;
-            }
-            return response.ToHttpResponse();
+                ));
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var response = new SingleResultResponse<ArticleDataTransferModel>();
-            try
-            {
-                response.Model = await blogService.GetById(id);
-                response.Message = $"Fetch record with id: {response.Model.Id}";
-            }
-            catch (Exception ex)
-            {
-                response.DidError = true;
-                response.ErrorMessage = ex.Message;
-            }
-            return response.ToHttpResponse();
+            return ToApiResponse<ArticleDataTransferModel>(await blogService.GetById(id));
         }
     }
 }

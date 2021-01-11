@@ -1,4 +1,5 @@
 ﻿using CoffeeBlog.Common.Interfaces;
+using CoffeeBlog.Common.ModelMappers;
 using CoffeeBlog.Common.Models;
 using CoffeeBlog.WebApi.Common;
 using CoffeeBlog.WebApi.DataTransferModels;

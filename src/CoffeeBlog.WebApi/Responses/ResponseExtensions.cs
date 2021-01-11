@@ -1,4 +1,4 @@
-﻿using CoffeeBlog.WebApi.Interfaces;
+﻿using CoffeeBlog.Common.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;

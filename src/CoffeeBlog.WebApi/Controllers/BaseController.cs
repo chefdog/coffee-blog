@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CoffeeBlog.WebApi.Controllers
 {
@@ -12,13 +10,13 @@ namespace CoffeeBlog.WebApi.Controllers
     {
         protected ILogger logger;
 
-        protected IActionResult ToApiResponse<T>(Func<T> methodName, bool handleFile = false)
+        protected IActionResult ToApiResponse<T>(T data, bool handleFile = false)
         {
             var apiResponse = new SingleResultResponse<T>();
             try
             {
-                var result = methodName();
-                apiResponse.Model = result;
+                apiResponse.Model = data;
+                apiResponse.Version = this.GetAssemblyVersion();
             }
             catch (Exception ex)
             {
@@ -37,6 +35,7 @@ namespace CoffeeBlog.WebApi.Controllers
                 apiResponse.Model = data;
                 apiResponse.PageNumber = 0;
                 apiResponse.PageSize = 100;
+                apiResponse.Version = this.GetAssemblyVersion();
             }
             catch (Exception ex)
             {
@@ -45,6 +44,11 @@ namespace CoffeeBlog.WebApi.Controllers
                 logger.LogError(ex, ex.Message, apiResponse);
             }
             return Ok(apiResponse);
+        }
+
+        protected string GetAssemblyVersion()
+        {
+            return GetType().Assembly.GetName().Version.ToString();
         }
     }
 }
