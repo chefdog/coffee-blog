@@ -1,9 +1,23 @@
 # coffee-blog
 .net core angular 9 blog engine
 
+# Credits
+The architecture and solutions have been build based on concepts from books and best practices discovered working 
+in several projects over the years.
+
+Books I have read:
+Modern API Design with ASP.NET core 2
+Building Microservices with .NET Core 2.0
+ASP.NET Core 3 and angular 9
+
+Training courses:
+Angular - The complete guide, by Maximilian Schwarzmuller (Udemy)
+
 # .NET Core WebApi
 
-## ImageService
+## Services
+
+### ImageService
 
 Uses https://github.com/Azure-Samples/storage-blobs-dotnet-webapp
 

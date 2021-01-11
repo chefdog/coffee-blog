@@ -1,6 +1,6 @@
-﻿using CoffeeBlog.WebApi.Common;
+﻿using CoffeeBlog.Common.Interfaces;
+using CoffeeBlog.WebApi.Common;
 using CoffeeBlog.WebApi.DataTransferModels;
-using CoffeeBlog.WebApi.Interfaces;
 using Microsoft.Extensions.Options;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System;

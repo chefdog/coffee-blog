@@ -1,6 +1,7 @@
-﻿using CoffeeBlog.WebApi.Common;
-using CoffeeBlog.WebApi.Interfaces;
-using CoffeeBlog.WebApi.Models;
+﻿using CoffeeBlog.Common.Enums;
+using CoffeeBlog.Common.Interfaces;
+using CoffeeBlog.Common.Models;
+using CoffeeBlog.WebApi.Common;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
